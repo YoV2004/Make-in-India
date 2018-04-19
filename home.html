@@ -1,0 +1,529 @@
+﻿
+<html>
+<head>
+  <title>Home</title>
+  <link rel="icon" type="icon/png" href="icon.png">
+  <script src="jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+
+  $("a").on('click', function(event) {
+
+    if (this.hash !== "") {
+
+      event.preventDefault();
+
+
+      var hash = this.hash;
+
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+<style>
+
+*{
+	margin:0;
+	padding:0;
+}
+.side-bar{
+  position: fixed;
+  z-index: 9000;
+  top: 0px;
+  left: 0px;
+  background: #1a1a1a;
+  width: 140px;
+  height: 100%;
+  box-shadow: 5px 5px 4px rgba(0,0,0,0.4)
+}
+
+
+.side-bar img:hover{
+  transform: scale(1.4);
+  transition: 0.5s ease;
+}
+.sidenav{
+  height: 100%;
+  width:0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  box-shadow: 10px 0px 9px rgba(0,0,0,0.4);
+  background: #1a1a1a;
+  
+  z-index: 9999;
+  transition: 0.5s;
+
+  
+}
+.sidenav a{
+   padding: 8px 8px 8px 3px;
+  top:20px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #ffcc00;
+    display: block;
+    transition: 0.3s;
+    
+}
+
+
+.sidenav a:hover {
+    color: #fff;
+    background-color: #ffcc00;
+    
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    transform: scale(5);
+    margin-left: 50px;
+    color: #ffcc00;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.sidenav .closebtn:hover {
+    color: white;
+    }
+#s{
+  opacity:0;
+  transition: .5s ;
+}
+
+
+
+
+
+
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: #white;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 {
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("a11.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("p2.jpg");
+  min-height: 500px;
+}
+
+.bgimg-3 {
+  background-image: url("p3.jpg");
+  min-height: 500px;
+}
+
+.bgimg-4 {
+background-image: url("p4.jpg");
+  min-height: 500px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 40px;
+  font-size: 30px;
+  letter-spacing: 10px;
+  top: 80%;
+}
+
+h1 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #fff;
+}
+
+h2 {
+	color= #333
+	font-family:tahoma;
+	font-weight:bold;
+}
+
+
+footer{
+  color:white;
+  background:#111;
+}
+	p {
+	font-size:18px;
+}
+@media only screen and (max-device-width: 1024px) {
+    .bgimg-1, .bgimg-2, .bgimg-3 {
+        background-attachment: scroll;
+    }
+
+    footer{
+	background-color:#000;
+	font-color:#FFF;
+	}
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+  z-index: 9999;
+}
+
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 90%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 40px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  top: 80px;
+  z-index: 9999;
+}
+
+.next {
+  right: 10px;
+  border-radius: 3px 0 0 3px;
+}
+
+
+
+
+.prev:hover, .next:hover {
+  background-color:  #ffcc00;
+}
+
+
+
+.text {
+  color: #f2f2f2;
+  font-size: 150px;
+  padding: 8px 12px;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  top: 125px;
+  z-index: 9999;
+}
+
+
+
+.mySlides {display: none;
+}
+
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: absolute;
+  margin: auto;
+  top:45vh;
+  left: 38%;
+  font-size: 120px;
+  color:white;
+  text-align: center;
+}
+
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 40%;
+    border-radius: 5px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+img {
+    border-radius: 5px 5px 0 0;
+}
+
+.container {
+    padding: 2px 16px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="side-bar"  id="s">
+<div id="mySidenav" class="sidenav">
+  <span class="closebtn" onClick="closeNav()">&times;</span><br><br><br><br>
+  <a href="home.html" style=":80px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
+  <a href="about.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About</button></a>
+  <a href="sectors.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sectors</a>
+ <a href="keysupporters.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Investors</a>
+</div>
+<img src="logo.png" style="z-index: 9100; height: 80px; width: 130px; top: 30px; padding-left:10px;">
+<span href="#" style="z-index: 98; position: fixed; top: 80px; left: 47px; color: #ffcc00; z-index: 9100; font-size: 45px; cursor: pointer"               onClick="openNav()"><b>&#9776;</b></span>
+    <a href="#m1"><img src="04.png" style="position:fixed;left:40px;top:192px">    </a>
+    <a href="#m2"><img src="02.png" style="position:fixed;left:40px;top:284px;height:8%"></a>
+
+    <a href="#m3"><img src="01.png" style="position:fixed;left:47px;top:406px; "> </a>
+ <a href="#m4"><img src="03.png" style="position:fixed;left:47px;top:518px"> </a>
+
+
+</div>
+
+<div class="bgimg-1">
+  <div class="caption">
+      <img src="logo1.png" height="400px" width="600px" style="position: relative;top: 43px"> <br>
+    <span class="border" style="top: 10%;"> <b>MAKE IN INDIA</b> </span>
+
+<div class="slideshow-container" >
+<center>
+<div class="mySlides fade" style="position: relative;
+	top:60px;
+	font-size: 56px;
+	color: white;font-weight: bold;background-color: #1a1a1a;width: 500px
+"> 
+  INVEST
+</div>
+
+<div class="mySlides fade" style="position: relative;background-color: #1a1a1a;
+	top:60px;
+	font-size: 56px;
+	color: white;font-weight: bold;width: 500px
+	">
+  MANUFACTURE
+</div>
+
+<div class="mySlides fade" style="position: relative;background-color: #1a1a1a;
+	top:60px;text-align: center;
+	font-size: 56px;
+	color: white;font-weight: bold;width: 500px
+">
+ EARN
+</div>
+</center>
+</div>
+
+
+</div></div>
+
+
+    </div>
+
+
+    
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; height: 100%;" id="m1">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ffcc00; font-size: 30px; ">
+  	<B>
+  	ABOUT THE PROGRAM
+  </B>
+</h1>
+
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+  	<b>The Make in India initiative was launched by Prime Minister in September 2014 as part of a wider set of nation-building initiatives. Devised to transform India into a global design and manufacturing hub, Make in India was a timely response to a critical situation: by 2013, the much-hyped emerging markets bubble had burst, and India’s growth rate had fallen to its lowest level in a decade. The promise of the BRICS Nations (Brazil, Russia, India, China and South Africa) had faded, and India was tagged as one of the so-called ‘Fragile Five’. Global investors debated whether the world’s largest democracy was a risk or an opportunity. India’s 1.2 billion citizens questioned whether India was too big to succeed or too big to fail. India was on the brink of severe economic failure. Make in India aims to make industry contribute 25 percent in India's economy. 
+  		<br>
+     <center><iframe width="854" height="480" src="https://www.youtube.com/embed/px0Chbq1B10" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+  	</b>
+  </p>
+ 
+</div>
+
+
+
+<a name="m2">
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; height: 100%;" id="m2">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ffcc00; font-size: 30px; ">
+  	<B>
+  	ECONOMICAL PROS
+  </B>
+</h1>
+
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+  	<b>Due to the manufacturing of products in India, economic growth is inevitable, which will not only boost the trade sector but also will increase the GDP of Indian economy as with the setting up of new factories and various investments being speculated in the Indian commercial sectors the flow of income will be humongous. Various sectors such as exportation, architecture, textiles, telecommunications etc. are likely to flourish inevitably, strengthening the Indian economy which is already the seventh largest in the world.<br>The emergence of the manufacturing industries would automatically convert India into a hub for the fabrication of various commercial products; as a result, there would be a grand collection of the FDI, which, in turn, would strengthen the rupee against the domination of the American dollar.<br>
+      Most of the urban population prefer international brands rather than putting their faith in Indian retailers. As a result, the small manufacturing companies suffer an extreme loss in the market.
+
+Due to the Make in India campaign, such small manufacturers will be provided with a real shot at the business. With, companies investing in such small time retailers from all around the world, the brand value of Indian merchandise will increase dramatically.<br>
+
+  		<center><img src="g.jpg" style="height: 250px;"></center>
+  	</b>
+  </p>
+ 
+</div>
+
+
+<a name="m3">
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; height: 100%;" id="m3">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ffcc00; font-size: 30px; ">
+  	<B>
+  	PLANS AND PROCESSES
+  </B>
+</h1>
+
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+  	<b>Make in India was launched by Prime Minister against the backdrop of this crisis, and quickly became a rallying cry for India’s innumerable stakeholders and partners. It was a powerful, galvanising call to action to India’s citizens and business leaders, and an invitation to potential partners and investors around the world. But, Make in India is much more than an inspiring slogan. It represents a comprehensive and unprecedented overhaul of out-dated processes and policies. Most importantly, it represents a complete change of the Government’s mindset – a shift from issuing authority to business partner, in keeping with Prime Minister's tenet of ‘Minimum Government, Maximum Governance’.<br>
+      To start a movement, you need a strategy that inspires, empowers and enables in equal measure. Make in India needed a different kind of campaign: instead of the typical statistics-laden newspaper advertisements, this exercise required messaging that was informative, well-packaged and most importantly, credible. It had to (a) inspire confidence in India’s capabilities amongst potential partners abroad, the Indian business community and citizens at large; (b) provide a framework for a vast amount of technical information on 25 industry sectors; and (c) reach out to a vast local and global audience via social media and constantly keep them updated about opportunities, reforms, etc.
+
+The Department of Industrial Policy & Promotion (DIPP) worked with a group of highly specialised agencies to build brand new infrastructure, including a dedicated help desk and a mobile-first website that packed a wide array of information into a simple, sleek menu. Designed primarily for mobile screens, the site’s architecture ensured that exhaustive levels of detail are neatly tucked away so as not to overwhelm the user. 25 sector brochures were also developed: Contents included key facts and figures, policies and initiatives and sector-specific contact details, all of which was made available in print and on site.
+  		<center><img src="p.jpg" style="height: 180px;"></center>
+  	</b>
+  </p>
+ 
+</div>
+
+<a name="m4">
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; height: 100%;" id="m4">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ffcc00; font-size: 30px; ">
+  	<B>
+   IN THE NEWS
+  </B>
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px; "> 
+  	<b>
+      <marquee scrollamount="14" direction="right"><div class="card" style="position: relative;left: 100px">
+  <img src="n4.jpg" alt="Avatar" style="width:20%">
+  <div class="container">
+     
+    <p>Sweden is a strong<br> contributor to Make in <br>India initiative: PM Modi</p> 
+  </div>
+</div>
+<br><br>
+<div class="card" style="position: relative;">
+  <img src="n2.jpg" alt="Avatar" style="width:30%; left: 70px;">
+  <div class="container">
+     
+    <p>While the public bicycle sharing (PBS) initiative<br> is yet to be launched across most smart cities<br></p> 
+  </div>
+</div>
+
+<div class="card" style="position: relative;left: 450px; bottom: 655px;">
+  <img src="n3.jpg" alt="Avatar" style="width:20%">
+  <div class="container">
+     
+    <p align="justify">The 'Make in India' initiative<br> provides "a valuable opportunity" <br>to French and Indian entrepreneurs <br>to enter the defence equipment <br>manufacturing field in India</p> 
+  </div>
+</div>
+
+
+<div class="card" style="position: relative;left: 500px;bottom: 600px">
+  <img src="n7.jpg" alt="Avatar" style="width:15%">
+  <div class="container">
+     
+    <p>SA new entrant in the Indian <br>market, BRITZO launched its <br>smartphone brand "iVVO" <br>on Tuesday</p> 
+  </div>
+</div></marquee>
+  	</b>
+  </p>
+ 
+</div>
+
+
+</body>
+
+<script>
+
+function playPause(e) {
+    if (e.paused){
+        e.play();
+    }else{
+        e.pause();
+
+      }
+
+}
+
+
+
+
+
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+
+}
+
+  window.onscroll = function() {myFunction()};
+    function myFunction() {
+    var navbar = document.getElementById("s");
+    var topbar = document.getElementById("t");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
+      {navbar.style.opacity = "1";
+    topbar.style.opacity = "1";} 
+    else 
+        {navbar.style.opacity = "0";
+      topbar.style.opacity = "0";
+       }
+}
+
+
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+   
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    
+    slides[slideIndex-1].style.display = "block";  
+    
+    setTimeout(showSlides, 2000); 
+}
+
+</script>
+<footer align="center"   background color ="#111" style="height: 35%; padding: 100px;" class="bar">
+<img src="SVIS.png"><br>
+<p style="font-size: 20px; font-weight: bold;">Made By VIDIT KHANDELWAL & KAPEESH GUPTA<br>
+All Rights Reserved<br><br><p>
+
+    <a href="https://www.youtube.com/channel/UCWn9BiHhsVaENg3cHOr6_oQ"><img src="pb.png" style="padding: 10px;"></a>
+      <a href="http://www.svis.org.in/"><img src="w.png" style="padding: 10px"></a>
+        <a href="https://www.facebook.com/Sri-Venkateshwar-International-School-141823379182624/"><img src="f.png" style="padding: 10px";></a>
+</footer>
+</html>

@@ -1,0 +1,527 @@
+﻿
+<html>
+<head>
+  <title>Key Investors</title>
+  <link rel="icon" type="icon/png" href="icon.png">
+  <script src="jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+
+  $("a").on('click', function(event) {
+
+
+    if (this.hash !== "") {
+
+      event.preventDefault();
+
+      
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+<style>
+
+*{
+	margin:0px;
+	padding:0px;
+}
+.side-bar{
+  position: fixed;
+  z-index: 9000;
+  top: 0px;
+  left: 0px;
+  background: #1a1a1a;
+  width: 140px;
+  height: 100%;
+  box-shadow: 5px 5px 4px rgba(0,0,0,0.4)
+}
+
+.side-bar img:hover{
+  transform: scale(1.4);
+  transition: 0.5s ease;
+}
+
+.sidenav{
+  height: 100%;
+  width:0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  box-shadow: 10px 0px 9px rgba(0,0,0,0.4);
+  background: #1a1a1a;
+  
+  z-index: 9999;
+  transition: 0.5s;
+
+  
+}
+.sidenav a{
+   padding: 8px 8px 8px 3px;
+  top:20px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #ff751a;
+    display: block;
+    transition: 0.3s;
+    
+}
+
+
+.sidenav a:hover {
+    color: #fff;
+    background-color: #ff751a;
+
+    
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    transform: scale(5);
+    margin-left: 50px;
+    color: #ff751a;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.sidenav .closebtn:hover {
+    color: white;
+    }
+#s{
+	opacity:0;
+	transition: .5s ;
+}
+
+
+
+
+
+
+body, html {
+  height: 100%;
+  
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: white;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 , .bgimg-5, .bgimg-6, .bgimg-7, .bgimg-8, .bgimg-9, .bgimg-9,.bgimg-10, .bgimg-11{
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("ki1.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("f1.png");
+  min-height: 350px;
+}
+
+.bgimg-3 {
+  background-image: url("f2.png");
+  min-height: 350px;
+}
+
+.bgimg-4 {
+background-image: url("f3.png");
+  min-height: 350px;
+}
+
+.bgimg-5 {
+background-image: url("f4.png");
+  min-height: 350px;
+}
+
+.bgimg-6 {
+background-image: url("f5.png");
+  min-height: 500px;
+}
+
+
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 40px;
+  font-size: 30px;
+  letter-spacing: 10px;
+  top: 80%;
+}
+
+h1 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #fff;
+}
+
+
+
+footer{
+  color:white;
+  background:#111;
+}
+	p {
+	font-size:18px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+
+}
+
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; 
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #f1f1f1; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #ff751a; 
+}
+
+::-webkit-scrollbar-button {
+    display: block; 
+    
+
+}
+ul{
+  list-style-type: none;
+  background: #1a1a1a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width:100%;
+  height: 80px;
+  box-shadow: 5px 5px 4px rgba(0,0,0,0.4)
+}
+.li{
+  display: inline-block;
+  padding-left: 80px;
+  padding-top:10px; 
+  transition: 0.3s
+}
+
+.li img{
+  transform: scale(1.2);
+}
+.li:hover{
+  
+  transform: scale(1.4);
+}
+
+.tooltip {
+    position: relative;
+    display: inline-block;
+
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 110px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 100%;
+    left: 70%;
+    margin-left: 10px;
+    top: 50px;
+    height: 30px;
+    font-size: 120%;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+</style>
+</head>
+<body>
+
+<div class="side-bar"  id="s">
+<div id="mySidenav" class="sidenav">
+  <span class="closebtn" onClick="closeNav()">&times;</span><br><br><br><br>
+  <a href="home.html" style=":80px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
+  <a href="about.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About</button></a>
+  <a href="sectors.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sectors</a>
+ <a href="keysupporters.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Investors</a>
+</div>
+<img src="logo.png" style="z-index: 9100; height: 80px; width: 130px; top: 30px; padding-left:10px;">
+<span href="#" style="z-index: 98; position: fixed; top: 80px; left: 47px; color: #ff751a; z-index: 9100; font-size: 45px;cursor: pointer" onClick="openNav()"><b>&#9776;</b></span>
+<div class="tooltip">
+ <a href="#m1"><img src="FF1.png" style="position:fixed;left:44px;top:192px">    </a>
+ <span class="tooltiptext">U.S.A</span>
+</div>
+
+<div class="tooltip">
+    <a href="#m2"><img src="FF2.png" style="position:fixed;left:44px;top:294px;"></a>
+    <span class="tooltiptext">JAPAN</span>
+</div>
+
+<div class="tooltip">
+    <a href="#m3"><img src="FF3.png" style="position:fixed;left:44px;top:406px; "></a>
+<span class="tooltiptext">U.A.E</span>
+</div>
+
+<div class="tooltip">
+ <a href="#m4"><img src="FF4.png" style="position:fixed;left:44px;top:518px"></a>
+ <span class="tooltiptext">GERMANY</span>
+</div>
+
+<div class="tooltip">
+<a href="#m5"><img src="FF5.png" style="position:fixed;left:44px;top:628px"></a>
+<span class="tooltiptext">SWEDEN</span>
+</div>
+</div>
+
+
+  
+
+
+
+<div class="bgimg-1">
+  <div class="caption">
+      <img src="logo1.png" height="400px" width="600px" style="position: relative;top: 40px"> <br>
+      <span class="border" style="top: 10%;"> <b>KEY INVESTORS</b> </span>
+  </div>
+</div>
+
+
+
+
+    
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; height: 5%;" >
+<center><h2 style="color: white">5 COUNTRIES THAT ARE MAKING BIG IN INDIA:</h2></center>
+ 
+</div>
+
+<div class="bgimg-2" id="m1">
+  <div class="caption">
+   
+  </div>
+  
+</div>
+
+
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;" >
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ff751a; font-size: 30px; ">
+    
+  	<B>
+  	&nbsp;UNITED STATES
+     </B>
+     
+</h1>
+
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    Be it a McDonald’s burger, a Coca-Cola bottle or a Ford car, American companies have become an integral part of our daily lives. US-based companies are present across various sectors including manufacturing and services. Further, owing to India’s strong IT talent pool, some of the largest US-based companies present in India are CISCO, American Express, Microsoft, amongst others. Indeed, the India dream for American companies has become a reality
+  <br><br>
+ <img src="us1.jpg" height="150px" width="210px" >
+  <img src="us2.png" height="150px" width="200px" >
+  <img src="us6.png" height="175px" width="225px">
+   <img src="us3.png" height="80px" width="300px">
+    <img src="us4.png" height="80px" width="350px">
+
+      </p>
+</div>
+
+<div class="bgimg-3" id="m2">
+  <div class="caption">
+    
+  </div>
+  
+</div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; ">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ff751a; font-size: 30px; ">
+  	
+    <B>
+  	JAPAN
+  </B>
+  
+</h1>
+
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+  	Holding the baton in automobiles and electronics sector, Japanese companies were amongst the first ones to enter into India. With a growing interest in the Indian market, the total investment from Japanese companies in the last one year, has amounted to USD 4.7 B across major sectors. An incredible 1,305 Japanese companies are registered in India. In addition to the establishment of some renowned Japanese companies like Honda motors, Mitsubishi and Toyota, Japan is now actively engaging in India’s infrastructure projects including the USD 100 B Delhi-Mumbai Industrial Corridor project and the Mumbai-Ahmedabad Bullet train project.<br>
+    <img src="ja1.png" height="150px" width="210px" >
+  <img src="ja2.png" height="150px" width="200px" >
+  <img src="ja3.png" height="175px" width="225px">
+   <img src="ja4.png" height="80px" width="300px">
+    <img src="ja5.png" height="100px" width="160px">
+  
+
+  </p>
+ 
+</div>
+<div class="bgimg-4" id="m3">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;" id="m3">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ff751a; font-size: 30px; ">
+  	<B>
+   UNITED ARAB EMIRATES
+  </B>
+  
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+  	India holds strong bilateral ties in the middle east, especially with the United Arab Emirates. Along with oil-related trade, Cumulative foreign direct investment (FDI) equity flows into India reached USD 114.4 billion during the last two financial years 2015-16 and 2016-17. In a recent development, Abu Dhabi Investment Authority (ADIA) announced its decision to invest USD 1 billion in the National Investment & Infrastructure Fund, India’s attempt to raise equity funds for the infrastructure sector. Some key companies functioning in India include Emaar, DP World, Abu Dhabi’s National Petroleum Construction Company, Abu Dhabi National Energy Company, Drake and Scull International.
+<br><br>
+    <img src="ua1.png" height="160px" width="220px" >
+  <img src="ua2.jpg" height="160px" width="220px" >
+  <img src="ua3.jpg" height="160px" width="220px">
+
+   
+    
+  </p>
+ 
+</div>
+
+
+<div class="bgimg-5" id="m4">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; ">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ff751a; font-size: 30px; ">
+    <B>
+   GERMANY
+  </B>
+  
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    Indo-German trade story dates back to the 16th century. The companies started manufacturing in India With Krupp AG & Demag setting up the Rourkela Steel plant and Bosch setting up its first unit to make spark plugs in 1953, followed by Siemens, Bayer, Daimler-Benz, etc, entering India to set shop. Today, India has more than 1,600 German companies and over 600 Indo-German joint ventures in operation which includes some big names like, BMW, Volkswagen, SAP, Siemens AG, and Merck.
+<br><br>
+
+ <img src="ger1.png" height="160px" width="160px" style="padding-left: 20px;">
+  <img src="ger2.png" height="160px" width="160px" style="padding-left: 20px;">
+ 
+   <img src="ger4.png" height="160px" width="160px" style="padding-left: 20px;">
+    <img src="ger3.png" height="160px" width="300px" style="padding-left: 20px;">
+    <img src="ger5.png" height="160px" width="320px" style="padding-left: 20px;">
+
+
+  </p>
+ 
+</div>
+
+<div class="bgimg-6" id="m5">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#ff751a; font-size: 30px; ">
+    
+    <B>
+   SWEDEN
+  </B>
+  
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    Known for being a smart and sustainable country, Swedish companies have been present in India even before independence. Companies like Ericsson, ABB, entered India in the early 1900s. The number has increased with Atlas Copco, Sandvik, Alfa Laval, Volvo, SAAB, Scania, etc., investing and making in India. The leader in smart technology, Sweden, works closely with India to develop India’s smart cities.
+    <br><br>
+    <img src="sw1.png" height="160px" width="160px" style="padding-left: 50px;">
+  <img src="sw2.png" height="160px" width="240px" style="padding-left: 50px;">
+ 
+   <img src="sw3.png" height="160px" width="260px" style="padding-left: 50px;">
+    <img src="sw4.png" height="160px" width="300px" style="padding-left: 50px;">
+
+
+  </p>
+ 
+</div>
+
+
+</body>
+
+<script>
+
+function playPause(e) {
+    if (e.paused){
+        e.play();
+    }else{
+        e.pause();
+
+      }
+
+}
+
+
+
+
+
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+
+}
+
+ window.onscroll = function() {myFunction()};
+    function myFunction() {
+    var navbar = document.getElementById("s");
+    var topbar = document.getElementById("t");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
+      {navbar.style.opacity = "1";
+    topbar.style.opacity = "1";} 
+    else 
+        {navbar.style.opacity = "0";
+      topbar.style.opacity = "0";
+       }
+}
+
+
+</script>
+<footer align="center"   background color ="#111" style="height: 35%; padding: 100px;" class="bar">
+<img src="SVIS.png"><br>
+<p style="font-size: 20px; font-weight: bold;">Made By VIDIT KHANDELWAL & KAPEESH GUPTA<br>
+All Rights Reserved<br><br><p>
+
+    <a href="https://www.youtube.com/channel/UCWn9BiHhsVaENg3cHOr6_oQ"><img src="pb.png" style="padding: 10px;"></a>
+      <a href="http://www.svis.org.in/"><img src="w.png" style="padding: 10px"></a>
+        <a href="https://www.facebook.com/Sri-Venkateshwar-International-School-141823379182624/"><img src="f.png" style="padding: 10px";></a>
+</footer>
+</html>

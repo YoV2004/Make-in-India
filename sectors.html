@@ -1,0 +1,653 @@
+
+<html>
+<head>
+  <title>Sectors</title>
+  <link rel="icon" type="icon/png" href="icon.png">
+  <script src="jquery.min.js"></script>
+  <script>
+$(document).ready(function(){
+
+  $("a").on('click', function(event) {
+
+
+    if (this.hash !== "") {
+
+      event.preventDefault();
+
+      
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+   
+        
+        window.location.hash = hash;
+      });
+    } 
+  });
+});
+</script>
+<style>
+
+*{
+	margin:0px;
+	padding:0px;
+}
+.side-bar{
+  position: fixed;
+  z-index: 9000;
+  top: 0px;
+  left: 0px;
+  background: #1a1a1a;
+  width: 140px;
+  height: 100%;
+  box-shadow: 5px 5px 4px rgba(0,0,0,0.4)
+}
+
+.sidenav{
+  height: 100%;
+  width:0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  box-shadow: 10px 0px 9px rgba(0,0,0,0.4);
+  background: #1a1a1a;
+  
+  z-index: 9999;
+  transition: 0.5s;
+
+  
+}
+.sidenav a{
+   padding: 8px 8px 8px 3px;
+  top:20px;
+    text-decoration: none;
+    font-size: 30px;
+    color: #33ccff;
+    display: block;
+    transition: 0.3s;
+    
+}
+
+
+.sidenav a:hover {
+    color: #fff;
+    background-color: #33ccff;
+    
+}
+
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 30px;
+    right: 50px;
+    transform: scale(5);
+    margin-left: 50px;
+    color: #33ccff;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.sidenav .closebtn:hover {
+    color: white;
+    }
+#s{
+	opacity:0;
+	transition: .5s ;
+}
+
+
+
+
+
+
+body, html {
+  height: 100%;
+  
+  font: 400 15px/1.8 "Lato", sans-serif;
+  color: white;
+}
+
+.bgimg-1, .bgimg-2, .bgimg-3, .bgimg-4 , .bgimg-5, .bgimg-6, .bgimg-7, .bgimg-8, .bgimg-9, .bgimg-9,.bgimg-10, .bgimg-11{
+  position: relative;
+  opacity: 1;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.bgimg-1 {
+  background-image: url("p1.jpg");
+  min-height: 100%;
+}
+
+.bgimg-2 {
+  background-image: url("sb1.jpg");
+  min-height: 350px;
+}
+
+.bgimg-3 {
+  background-image: url("sb2.jpg");
+  min-height: 350px;
+}
+
+.bgimg-4 {
+background-image: url("sb3.jpg");
+  min-height: 350px;
+}
+
+.bgimg-5 {
+background-image: url("sb4.jpg");
+  min-height: 350px;
+}
+
+.bgimg-6 {
+background-image: url("sb5.jpg");
+  min-height: 500px;
+}
+
+.bgimg-7 {
+background-image: url("sb6.jpg");
+  min-height: 350px;
+}
+
+.bgimg-8 {
+background-image: url("sb7.jpg");
+  min-height: 500px;
+}
+
+.bgimg-9 {
+background-image: url("sb8.jpg");
+  min-height: 350px;
+}
+
+.bgimg-10 {
+background-image: url("sb9.jpg");
+  min-height: 350px;
+}
+
+.bgimg-11 {
+background-image: url("sb10.jpg");
+  min-height: 350px;
+}
+
+.caption {
+  position: absolute;
+  left: 0;
+  top: 0%;
+  width: 100%;
+  text-align: center;
+  color: #000;
+}
+
+.caption span.border {
+  background-color: #111;
+  color: #fff;
+  padding: 40px;
+  font-size: 30px;
+  letter-spacing: 10px;
+  top: 80%;
+}
+
+h1 {
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  font: 20px "Lato", sans-serif;
+  color: #fff;
+}
+
+h2 {
+	color: #333;
+	font-family:tahoma;
+	font-weight:bold;
+}
+
+
+footer{
+  color:white;
+  background:#111;
+}
+	p {
+	font-size:18px;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+
+}
+
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a; 
+}
+
+
+::-webkit-scrollbar-thumb {
+    background: #f1f1f1; 
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background: #33ccff; 
+}
+
+::-webkit-scrollbar-button {
+    display: block; 
+    
+
+}
+ul{
+  list-style-type: none;
+  background: #1a1a1a;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width:100%;
+  height: 80px;
+  box-shadow: 5px 5px 4px rgba(0,0,0,0.4)
+}
+.li{
+  display: inline-block;
+  padding-left: 100px;
+  padding-top:10px; 
+  transition: 0.3s
+}
+
+.li img{
+  transform: scale(1);
+}
+.li:hover{
+  
+  transform: scale(1.3);
+}
+
+iframe{
+  padding: 20px
+}
+</style>
+</head>
+<body>
+
+<div class="side-bar"  id="s">
+<div id="mySidenav" class="sidenav">
+  <span class="closebtn" onClick="closeNav()">&times;</span><br><br><br><br>
+  <a href="home.html" style=":80px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Home</a>
+  <a href="about.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;About</button></a>
+  <a href="sectors.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Sectors</a>
+ <a href="keysupporters.html">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Key Investors</a>
+</div>
+<a href="home.html"><img src="logo.png" style="z-index: 9100; height: 80px; width: 130px; top: 30px; padding-left:10px;"></a>
+<span href="#" style="z-index: 98; position: fixed; top: 80px; left: 47px; color: #33ccff; z-index: 9100; font-size: 45px;cursor: pointer" onClick="openNav()"><b>&#9776;</b></span>
+</div>
+
+
+  
+<ul id="t" style="transition: .5s;opacity: 0">
+  <li class="li" style="padding-left: 170"><a href="#m1"><img src="s7.png"></a></li>
+  <li class="li" ><a href="#m2"><img src="s9.png"></a></li>
+  <li class="li" ><a href="#m3"><img src="s1.png"></a></li>
+  <li class="li" ><a href="#m4"><img src="s4.png"></a></li>
+  <li class="li" ><a href="#m5"><img src="s6.png" height="45px"></a></li>
+  <li class="li" ><a href="#m6"><img src="s8.png"></a></li>
+  <li class="li" ><a href="#m7"><img src="s10.png"></a></li>
+  <li class="li" ><a href="#m8"><img src="s2.png"></a></li>
+  <li class="li" ><a href="#m9"><img src="s3.png"></a></li>
+  <li class="li" ><a href="#m10"><img src="s5.png"></a></li>
+
+</ul>
+
+
+<div class="bgimg-1">
+  <div class="caption">
+      <img src="logo1.png" height="400px" width="600px" style="position: relative;top: 43px"> <br>
+      <span class="border" style="top: 10%;"> <b>&nbsp;&nbsp;&nbsp;&nbsp;SECTORS&nbsp;&nbsp;&nbsp;&nbsp;</b> </span>
+  </div>
+</div>
+
+
+
+
+    
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; height: 5%;" >
+<center><h2 style="color: white">These are some main sectors of the Make in India program:</h2></center>
+ 
+</div>
+
+<div class="bgimg-2" id="m1">
+  <div class="caption">
+   
+  </div>
+  
+</div>
+
+
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;" >
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+    <img src="aul.png" style="width:150px">
+  	<B>
+  	&nbsp;AUTOMOBILES AND COMPONENTS
+     </B>
+     <img src="aul.png" style="transform: scale(-1,1);width:150px">
+</h1>
+
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    
+  	<b><ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>Sixth largest producer in the world with an average annual production of 24 million vehicles in 2016.</li><li>India has the fifth largest passenger vehicle and commercial vehicle market.</li><li>Presence of four large auto manufacturing hubs across the country: Delhi-Gurgaon-Faridabad in the north, Mumbai-Pune-Nashik-Aurangabad in the west, Chennai- Bengaluru-Hosur in the south and Jamshedpur-Kolkata in the east.</li><li>Contributes to 7.1 % of India's Gross Domestic Product (GDP) by volume.</li><li>Six million-plus hybrid and electric vehicles to be sold annually, by 2020.Two-wheeler production has grown from 8.5 million units annually to 15.9 million units in the last seven years.</ol>
+      <center><iframe width="854" height="480" src="https://www.youtube.com/embed/2hV6vF_SC0U" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
+</center>
+  		
+      <ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+      Size of the Indian Auto Component Industry is around USD 39 billion (2015-16) and contributes 2.3% to India's Gross Domestic Product (GDP).</li><li>Auto Component Industry registered a Compound Annual Growth Rate(CAGR) of 14% during 2006-16, during the same period exports increased from USD 3.2 billion to USD 10.81 billionIn the last financial year, the auto component exports contributed 4% to India's overall exports.</li><li>Surpassed Automotive Mission Plan (AMP) 2016-26 turnover target of USD 31.84 billion in FY 2016 by registering USD 39 billion.</li><li>Aims to achieve 5 times growth with a turnover of USD 200 billion, exports targets between USD 70-80 billion and an investment of USD 30-40 billion by 2026.Aftermarket sector growing at a CAGR of 12% annually.</li></ol><br>
+        <center><iframe width="854" height="480" src="https://www.youtube.com/embed/jc0TXRTuHk0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+  	</b>
+  </p>
+ 
+</div>
+
+<div class="bgimg-3" id="m2">
+  <div class="caption">
+    
+  </div>
+  
+</div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; ">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+  	<img src="avl.png" style="width:150px">
+    <B>
+  	AVIATION
+  </B>
+  <img src="avl.png" style="transform: scale(-1,1);width:150px">
+</h1>
+
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+  	<b><ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+    India is the world's fastest growing domestic aviation market, and has posted the fastest full year growth rate for three years in a row now.</li><li>
+    India's Revenue Passenger Kilometre (RPK) growth of 17.5% was higher than the global average growth of 7% in 2017.</li><li>
+    At USD 16 billion, India's aviation market is currently the 9th largest in the world and is projected to be the 3rd largest by 2020, and largest by 2030.</li><li>
+    More than 80 international airlines connecting to over 40 countries.</li></ol>
+
+ <center><iframe width="854" height="480" src="https://www.youtube.com/embed/886TroXJv2A" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+  	</b>
+  </p>
+ 
+</div>
+<div class="bgimg-4" id="m3">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;" id="m3">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+  	<img src="btl.png"  style="width:150px"><B>
+   BIOTECHNOLOGY
+  </B>
+  <img src="btl.png" style="transform: scale(-1,1);width:150px">
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+  	<b><ol  style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+    India is among the top 12 biotech destinations in the world and ranks third in the Asia Pacific.</li><li>
+    India has the second highest number of United States Food & Drug Administration(USFDA) approved plants.</li><li>
+    No.1 producer of Hepatitis B vaccine recombinant.</li><li>
+    Indian biotech industry shall touch USD 100 billion by 2025.</li><li>
+    Large consumer base with increasing disposable income.</li></ol>
+
+  		<center><iframe width="854" height="480" src="https://www.youtube.com/embed/TWw4e0Z-ymI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+  	</b>
+  </p>
+ 
+</div>
+
+
+<div class="bgimg-5" id="m4">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; ">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+    <img src="col.png" style="width:150px"><B>
+   CONSTRUCTION
+  </B>
+  <img src="col.png" style="transform: scale(-1,1);width:150px">
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    <b><ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+    USD 1 Trillion investments for infrastructure sector projected during 2012-17</li><li>
+    USD 650 Billion investments in urban infrastructure estimated over next 20 years.</li><li>
+    100% Foreign Direct Investment (FDI) permitted through the automatic route for townships, cities.</li><li>
+    Construction sector contributes towards 8% of the Indian GDP (at constant prices). Last five year estimates (2006-07 to 2010-11).</li><li>
+    Additional Fact: increased to 3.85 lakh crore (7.9% of the total GDP) in 2010-11 from 284798 crore (8% of the total GDP) in 2006-07.</li><li>
+    Additional Facts: Growth rate for GDP in construction 8.1%</li><li>
+    100 Smart Cities and 500 AMRUT Cities will invite investment of 2 Trillion Rupees in the next five years.</li><li>
+    INR 62,009 Crore. would be invested under Swachh Bharat Mission (SBM) in urban areas.</li></ol>
+
+<center><iframe width="854" height="480" src="https://www.youtube.com/embed/rIDMuaS-QdE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+      
+    </b>
+  </p>
+ 
+</div>
+
+<div class="bgimg-6" id="m5">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+    <img src="mil.png" style="width:150px" >
+    <B>
+   DEFENCE MANUFACTURING
+  </B>
+  <img src="mil.png" style="transform: scale(-1,1);width:150px">
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    <b><ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+    India has the third largest armed forces in the world.</li><li>
+    The allocation of Defence in the India's union budget is approx USD 34.53 billion and 31.1% of the defence budget is spent on capital acquisitions.</li><li>
+    60% of defence related requirements are met by imports which offers a huge opportunity for import substitution.
+ </li></ol>
+ <center><iframe width="854" height="480" src="https://www.youtube.com/embed/WKceL2RwHlA" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+      
+    </b>
+  </p>
+ 
+</div>
+
+<div class="bgimg-7" id="m6">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+    <img src="itl.png" style="width:150px" ><B>
+   IT AND ELECTRONICS SYSTEM
+  </B>
+  <img src="itl.png" style="transform: scale(-1,1);width:150px" >
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    <b>​<ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+    The electronics market of India is one of the largest in the world and is anticipated to reach USD 400 billion by 2020.</li><li>
+Sector is expected to grow at a projected CAGR of 26% for the period 2014-2020. (CAGR – Cumulative annual growth rate)</li><li>
+India has the 4th Largest Start up ecosystem in the world.</li><li>
+Several government driven initiatives and incentives like – Electronics Development Fund (EDF), Electronics Manufacturing Clusters (EMCs) scheme, National Knowledge Network & National Optical Fibre Network.</li><li>
+100% FDI is allowed through automatic route (49% through automatic route in strategic defence electronics sector)</li></ol><center><iframe width="854" height="480" src="https://www.youtube.com/embed/ElJ6W3LLGKM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+    </b>
+  </p>
+ 
+</div>
+
+<div class="bgimg-8" id="m7">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+    <img src="phl.png"  style="width:150px"><B>
+    &nbsp;PHARMACEUTICALS
+  </B>
+  <img src="phl.png"  style="transform: scale(-1,1);width:150px">
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    <b>
+      <ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+    Third largest pharmaceuticals market by 2020 in terms of incremental growth.</li><li>
+    20% of global exports in generics, making it the largest provider of generic medicines globally.</li><li>
+    USD 45 Billion in revenue by 2020, revenue of USD 55 billion by 2020 as base case, and can grow to USD 70 billion in a aggressive case scenario.</li><li>
+    USD 26.1 Billion in generics by 2016.</li><li>
+    USD 200 Billion to be spent on infrastructure by 2024.</li><li>
+    India's filing of Drug Master Files's (DMF's) with USFDA as of Dec 2013 is 3411, the highest filed by any country in the world.</li><li>
+    Total exports of Drugs, Pharmaceuticals for 2013-14 at USD 15,095 million, recording a growth rate 2.5% over the corresponding period of previous years.</li></ol>
+    
+     <center><iframe width="854" height="480" src="https://www.youtube.com/embed/oD0KmTAH3VM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+    </b>
+  </p>
+ 
+</div>
+
+<div class="bgimg-9" id="m8">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; ">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+    <img src="cal.png"  style="width:150px"><B>
+   PORTS AND SHIPPING 
+  </B>
+  <img src="cal.png"  style="transform: scale(-1,1);width:150px">
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    <b>
+      <ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+   India has 12 major ports and 64 minor ports handling Export Import cargo.</li><li>
+    20% of global exports in generics, making it the largest provider of generic medicines globally.</li><li>
+    The total cargo handling capacity of Major ports during 2016-17 was 1065.83 MTPA.</li><li>
+    USD 26.1 Billion in generics by 2016.</li><li>
+    In 2016-17, 57 projects worth USD 14 billion created an additional capacity of 103.52 MTPA.</li><li>
+    Budget 2018-19 allocation to Ministry of Shipping stands at USD 289 million.</li></ol>
+    
+     <center><iframe width="854" height="480" src="https://www.youtube.com/embed/nai9fZwh2qk" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+    </b>
+  </p>
+ 
+</div>
+
+<div class="bgimg-10" id="m9">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify;">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+    <img src="trl.png"  style="width:150px"><B>
+   HIGH SPEEED RAILWAY
+  </B>
+  <img src="trl.png"  style="transform: scale(-1,1);width:150px">
+</h1>
+  <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    <b>
+      <ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+   Indian Railways network spans more than 66030 kms, making it the world’s third largest rail network.</li><li>
+    India has the fourth largest rail freight carrier in the world and has the largest passenger carrier.</li><li>
+    Indian railways carry around 3.04 million tonnes and 22.4 million passengers of freight every day.</li><li>
+    1.3 million strong work force in Indian Railways.</li>
+    </ol>
+    
+     <center><iframe width="854" height="480" src="https://www.youtube.com/embed/JVrQPWg8QDI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+    </b>
+  </p>
+ 
+</div>
+
+
+<div class="bgimg-11" id="m10">
+  <div class="caption">
+    
+  </div></div>
+
+<div style="color: #FFFFFF;background-color:#1a1a1a;text-align:center;padding:50px 80px;text-align: justify; ">
+  <h1 style="text-align:center; position: relative; left: 70px; color:#33ccff; font-size: 30px; ">
+    <img src="spl.png"  style="width:150px"><B>
+   SPACE
+  </B>
+  <img src="spl.png"  style="transform: scale(-1,1);width:150px">
+</h1>
+  < <p align="justify" style="position: relative; left: 75px; padding: 50px;"> 
+    <b>
+      <ol style="padding-left: 200px;width: 1000px;font-size: 120%;"><li>
+   India’s space programme stands out as one of the most cost-effective in the world.</li><li>
+   33 countries and three multinational bodies have formal co-operative arrangements in place with the Indian Space Research Organisation (ISRO).</li><li>
+   30 spacecraft in differing orbital paths.</li>
+    </ol>
+    
+     <center><iframe width="854" height="480" src="https://www.youtube.com/embed/WmMEqV6LnhE" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>
+    </b>
+  </p>
+ 
+</div>
+
+</body>
+
+<script>
+
+function playPause(e) {
+    if (e.paused){
+        e.play();
+    }else{
+        e.pause();
+
+      }
+
+}
+
+
+
+
+
+
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+
+}
+
+ window.onscroll = function() {myFunction()};
+    function myFunction() {
+    var navbar = document.getElementById("s");
+    var topbar = document.getElementById("t");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) 
+      {navbar.style.opacity = "1";
+    topbar.style.opacity = "1";} 
+    else 
+        {navbar.style.opacity = "0";
+      topbar.style.opacity = "0";
+       }
+}
+
+
+</script>
+
+<footer align="center"   background color ="#111" style="height: 35%; padding: 100px;" class="bar">
+<img src="SVIS.png"><br>
+<p style="font-size: 20px; font-weight: bold;">Made By VIDIT KHANDELWAL & KAPEESH GUPTA<br>
+All Rights Reserved<br><br><p>
+
+    <a href="https://www.youtube.com/channel/UCWn9BiHhsVaENg3cHOr6_oQ"><img src="pb.png" style="padding: 10px;"></a>
+      <a href="http://www.svis.org.in/"><img src="w.png" style="padding: 10px"></a>
+        <a href="https://www.facebook.com/Sri-Venkateshwar-International-School-141823379182624/"><img src="f.png" style="padding: 10px";></a>
+</footer>
+</html>
